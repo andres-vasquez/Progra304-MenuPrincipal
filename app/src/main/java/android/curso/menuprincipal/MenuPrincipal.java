@@ -1,20 +1,31 @@
 package android.curso.menuprincipal;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MenuPrincipal extends AppCompatActivity {
+
+    private Context context;
+
+    private ImageView imgCarrito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
+        context=this;
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        imgCarrito=(ImageView)findViewById(R.id.imgCarrito);
 
         //Recibimos los datos
         Intent b=getIntent();
@@ -23,6 +34,14 @@ public class MenuPrincipal extends AppCompatActivity {
 
         //Mostramos el mensaje de bienvenida en pantalla
         Toast.makeText(this,"Bienvenido "+datos_recibidos[0],Toast.LENGTH_SHORT).show();
+
+        imgCarrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,CarritoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         /*
         Si entraste aca es porque tienes interÈs en realizar tu dashboard y crear tu carrito de compra.
