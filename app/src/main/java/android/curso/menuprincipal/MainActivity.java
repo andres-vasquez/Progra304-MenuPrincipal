@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
         //Evento de click en el botón
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                Estudiante objEstudiante=new Estudiante();
+                objEstudiante.setNombre("Rosa");
+                objEstudiante.setEdad(18);
+                objEstudiante.setCodigo(36273);
+
                 String campo_usuario = txtUsuario.getText().toString();
                 String campo_password = txtPassword.getText().toString();
 
@@ -52,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     datos[0]=txtUsuario.getText().toString();
                     datos[1]=txtPassword.getText().toString();
                     a.putExtra("datos_usuario", datos);
+
+                    //Agregar el objeto
+                    String strEstudiante=new Gson().toJson(objEstudiante);
+                    Log.e("Estudiante",strEstudiante);
+                    a.putExtra("estudiante", strEstudiante);
+
                     startActivity(a);
 
                 }

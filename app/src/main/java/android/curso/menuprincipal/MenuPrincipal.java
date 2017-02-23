@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -32,8 +35,23 @@ public class MenuPrincipal extends AppCompatActivity {
         String[] datos_recibidos=new String[2];
         datos_recibidos=b.getStringArrayExtra("datos_usuario");
 
+        String strEstudiante = b.getStringExtra("estudiante");
+        Log.e("Estudiante.recibido",strEstudiante);
+
+        try{
+            Estudiante objEstudiante=new Gson().fromJson(strEstudiante,Estudiante.class);
+            Toast.makeText(this,"Bienvenido "+objEstudiante.getNombre()
+                    +" Codigo:"+objEstudiante.getCodigo(),
+                    Toast.LENGTH_SHORT).show();
+
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+
         //Mostramos el mensaje de bienvenida en pantalla
-        Toast.makeText(this,"Bienvenido "+datos_recibidos[0],Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"Bienvenido "+datos_recibidos[0],Toast.LENGTH_SHORT).show();
 
         imgCarrito.setOnClickListener(new View.OnClickListener() {
             @Override
