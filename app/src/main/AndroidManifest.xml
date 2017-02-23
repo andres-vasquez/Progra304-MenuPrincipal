@@ -22,7 +22,23 @@
             android:name=".MenuPrincipal"
             android:label="@string/title_activity_menu_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CarritoActivity"></activity>
+        <activity android:name=".CarritoActivity" />
+        <activity
+            android:name=".ProductosActivity"
+            android:label="@string/title_activity_productos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HistoricoActivity"
+            android:label="@string/title_activity_historico"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BusquedaActivity"
+            android:label="@string/title_activity_busqueda"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PromocionesActivity"
+            android:label="@string/title_activity_promociones"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
