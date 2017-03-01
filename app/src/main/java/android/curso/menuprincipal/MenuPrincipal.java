@@ -14,6 +14,11 @@ public class MenuPrincipal extends AppCompatActivity {
     private Context context;
 
     private ImageView imgCarrito;
+    private ImageView imgProductos;
+    private ImageView imgHistorico;
+    private ImageView imgBusqueda;
+    private ImageView imgPromociones;
+    private ImageView imgSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,13 @@ public class MenuPrincipal extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Vincular las variables con los iconos
         imgCarrito=(ImageView)findViewById(R.id.imgCarrito);
+        imgProductos=(ImageView)findViewById(R.id.imgProductos);
+        imgBusqueda=(ImageView)findViewById(R.id.imgBusqueda);
+        imgHistorico=(ImageView)findViewById(R.id.imgHistorico);
+        imgPromociones=(ImageView)findViewById(R.id.imgPromociones);
+        imgSalir = (ImageView)findViewById(R.id.imgSalir);
 
         //Recibimos los datos
         Intent b=getIntent();
@@ -40,6 +51,45 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(context,CarritoActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        imgProductos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,ProductosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgPromociones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,PromocionesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgHistorico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,HistoricoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgBusqueda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,BusquedaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

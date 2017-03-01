@@ -7,4 +7,8 @@
     <string name="texto_password">Ingrese el password</string>
     <string name="enviar">Enviar</string>
     <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="title_activity_productos">ProductosActivity</string>
+    <string name="title_activity_historico">HistoricoActivity</string>
+    <string name="title_activity_busqueda">BusquedaActivity</string>
+    <string name="title_activity_promociones">PromocionesActivity</string>
 </resources>
