@@ -37,8 +37,7 @@
         <activity
             android:name=".BusquedaActivity"
             android:label="@string/title_activity_busqueda"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="landscape"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PromocionesActivity"
             android:label="@string/title_activity_promociones"
