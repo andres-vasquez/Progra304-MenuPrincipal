@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 public class MenuPrincipal extends AppCompatActivity {
 
     private Context context;
@@ -37,6 +39,11 @@ public class MenuPrincipal extends AppCompatActivity {
         imgHistorico=(ImageView)findViewById(R.id.imgHistorico);
         imgPromociones=(ImageView)findViewById(R.id.imgPromociones);
         imgSalir = (ImageView)findViewById(R.id.imgSalir);
+
+        //Cargamos la imagen desde web URL
+        Picasso.with(context).load("http://cdn.wallpapersafari.com/53/98/uThM63.jpg").into(imgCarrito);
+        Picasso.with(context).load("http://eltornillodeklaus.com/wp-content/uploads/2014/12/eltornillodeklaus-interstellar-Christopher-nolan2.jpg").into(imgProductos);
+        Picasso.with(context).load(R.drawable.assassins_creed).into(imgBusqueda);
 
         //Recibimos los datos
         Intent b=getIntent();
